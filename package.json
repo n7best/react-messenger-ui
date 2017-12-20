@@ -4,7 +4,10 @@
   "description": "",
   "scripts": {
     "test": "jest",
-    "build": "cross-env NODE_ENV=production babel src -d lib"
+    "build": "cross-env NODE_ENV=production babel src -d lib",
+    "lint": "eslint ./src",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
