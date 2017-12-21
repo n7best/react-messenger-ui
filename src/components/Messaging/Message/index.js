@@ -1,10 +1,4 @@
-const MESSAGING_TYPE = {
-  RESPONSE: 'RESPONSE',
-  UPDATE: 'UPDATE',
-  MESSAGE_TAG: 'MESSAGE_TAG',
-  NON_PROMOTIONAL_SUBSCRIPTION: 'NON_PROMOTIONAL_SUBSCRIPTION'
-}
-
+import { MESSAGING_TYPE } from '../constants';
 
 class Message {
   children = [];
@@ -15,6 +9,18 @@ class Message {
     this.texts = [];
     this.type = props.type || MESSAGING_TYPE.RESPONSE;
     this.recipient = props.recipient || { id: '' };
+
+    /*
+      Message state to display to the user:
+
+      typing_on: display the typing bubble
+      typing_off: remove the typing bubble
+      mark_seen: display the confirmation icon
+      Cannot be sent with message.Must be sent as a separate request.
+
+      When using sender_action, recipient should be the only other property set in the request.
+     */
+    this.sender_action = props.senderAction || false;
   }
 
   appendChild(child) {

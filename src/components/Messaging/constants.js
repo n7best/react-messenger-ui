@@ -1,0 +1,17 @@
+export const MESSAGING_TYPE = {
+  RESPONSE: 'RESPONSE',
+  UPDATE: 'UPDATE',
+  MESSAGE_TAG: 'MESSAGE_TAG',
+  NON_PROMOTIONAL_SUBSCRIPTION: 'NON_PROMOTIONAL_SUBSCRIPTION'
+};
+
+export const SENDER_ACTIONS = {
+  MARK_SEEN: 'mark_seen',
+  TYPING_ON: 'typing_on',
+  TYPING_OFF: 'typing_off'
+};
+
+export default {
+  MESSAGING_TYPE,
+  SENDER_ACTIONS
+};
