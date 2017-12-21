@@ -18,15 +18,12 @@ const users = [
 const siteConfig = {
   title: 'React Messenger UI' /* title for your website */,
   organizationName: 'n7best',
-  tagline: 'A website for testing',
+  tagline: 'Better Bot Responose',
   url: 'https://n7best.github.io/react-messenger-ui' /* your website url */,
   baseUrl: '/react-messenger-ui/' /* base url for your project */,
   projectName: 'react-messenger-ui',
   headerLinks: [
     {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
   ],
   users,
   /* path to images for header/footer */

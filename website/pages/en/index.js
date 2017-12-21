@@ -52,8 +52,7 @@ class HomeSplash extends React.Component {
                       href={
                         siteConfig.baseUrl +
                         'docs/' +
-                        this.props.language +
-                        '/doc1.html'
+                        'doc1.html'
                       }>
                       Example Link
                     </Button>
@@ -61,8 +60,7 @@ class HomeSplash extends React.Component {
                       href={
                         siteConfig.baseUrl +
                         'docs/' +
-                        this.props.language +
-                        '/doc2.html'
+                        'doc2.html'
                       }>
                       Example Link 2
                     </Button>
@@ -112,6 +110,12 @@ class Index extends React.Component {
                   imageAlign: 'top',
                   title: 'Feature Two',
                 },
+                {
+                  content: 'The content of my second feature',
+                  image: siteConfig.baseUrl + 'img/logo.png',
+                  imageAlign: 'top',
+                  title: 'Feature Three',
+                },
               ]}
               layout="fourColumn"
             />
@@ -131,7 +135,7 @@ class Index extends React.Component {
                   content: 'Talk about learning how to use this',
                   image: siteConfig.baseUrl + 'img/logo.png',
                   imageAlign: 'right',
-                  title: 'Learn How',
+                  title: 'Feature Callout',
                 },
               ]}
             />
@@ -141,7 +145,7 @@ class Index extends React.Component {
             <GridBlock
               contents={[
                 {
-                  content: 'Talk about trying this out',
+                  content: 'Webview UI Included',
                   image: siteConfig.baseUrl + 'img/logo.png',
                   imageAlign: 'left',
                   title: 'Try it Out',
@@ -150,7 +154,7 @@ class Index extends React.Component {
             />
           </Container>
 
-          <Container padding={['bottom', 'top']} background="dark">
+          {/* <Container padding={['bottom', 'top']} background="dark">
             <GridBlock
               contents={[
                 {
@@ -162,9 +166,9 @@ class Index extends React.Component {
                 },
               ]}
             />
-          </Container>
+          </Container> */}
 
-          <div className="productShowcaseSection paddingBottom">
+          {/* <div className="productShowcaseSection paddingBottom">
             <h2>{"Who's Using This?"}</h2>
             <p>This project is used by all these people</p>
             <div className="logos">{showcase}</div>
@@ -177,7 +181,7 @@ class Index extends React.Component {
                 More {siteConfig.title} Users
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

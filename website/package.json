@@ -3,12 +3,15 @@
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
-    "publish-gh-pages": "GIT_USER=n7best docusaurus-publish",
+    "publish-gh-pages": "cross-env GIT_USER=n7best docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
     "docusaurus": "^1.0.3"
+  },
+  "dependencies": {
+    "cross-env": "^5.1.1"
   }
 }
