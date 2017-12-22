@@ -1,9 +1,14 @@
 import React from 'react';
-import { render, Message, Attachment } from '../src';
+import { fs } from 'memfs';
+import { render, Message, Attachment, CONSTANTS } from '../src';
+fs.writeFileSync('/hello.jpg', 'IMAGE_DATA');
 
 const App = () => (
   <Message recipient={{ id: '<PSID>' }}>
-    <Attachment url="test"/>
+    <Attachment
+      file={fs.readFileSync('/hello.jpg', 'utf8')}
+      type={CONSTANTS.ATTACHMENT_TYPE.AUDIO}
+      source={CONSTANTS.ATTACHMENT_SOURCE.FILE} />
   </Message>
 );
 
