@@ -1,4 +1,4 @@
-import { Message, Text, Response, SenderAction, Attachment } from '../components/Messaging';
+import { Message, Text, Response, SenderAction, Attachment, QuickReply } from '../components/Messaging';
 
 function createElement(type, props, root) {
   console.log('creating element', type, props, root)
@@ -8,6 +8,7 @@ function createElement(type, props, root) {
     RESPONSE: () => new Response(),
     SENDER_ACTION: () => new SenderAction(root, props),
     ATTACHMENT: () => new Attachment(root, props),
+    QUICKREPLY: () => new QuickReply(root, props),
     default: undefined
   };
 

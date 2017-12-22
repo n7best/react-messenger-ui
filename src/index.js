@@ -6,6 +6,7 @@ const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDER_ACTION';
 const Attachment = 'ATTACHMENT';
+const QuickReply = 'QUICKREPLY';
 
 export {
   render,
@@ -13,6 +14,7 @@ export {
   Message,
   SenderAction,
   Attachment,
+  QuickReply,
   CONSTANTS,
   version
 };

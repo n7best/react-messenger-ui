@@ -48,11 +48,20 @@ export const ATTACHMENT_SOURCE = {
   SAVED_ASSET: 'attachment_id',
 };
 
+export const QUICKREPLY_TYPE = {
+  TEXT: 'text',
+  LOCATION: 'location'
+};
+
+export const MAX_QUICK_REPLIES = 11;
+
 export default {
   MESSAGING_TYPE,
   SENDER_ACTIONS,
   NOTIFICATION_TYPE,
   ATTACHMENT_TYPE,
   ATTACHMENT_SOURCE,
+  MAX_QUICK_REPLIES,
+  QUICKREPLY_TYPE,
   TAGS
 };

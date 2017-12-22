@@ -1,6 +1,6 @@
 import FormData from 'form-data';
 import Recipient from './Recipient';
-import { MESSAGING_TYPE } from '../constants';
+import { MESSAGING_TYPE, MAX_QUICK_REPLIES } from '../constants';
 
 class Message {
   children = [];
@@ -18,6 +18,7 @@ class Message {
     this.notificationType = props.notificationType || false;
     this.tag = props.tag || false;
     this.formData = null;
+    this.quick_replies = [];
   }
 
   appendChild(child) {
@@ -37,6 +38,11 @@ class Message {
 
   addAttachment(attachment) {
     this.attachment = attachment;
+  }
+
+  addQuickreply(quickreply) {
+    this.quick_replies.push(quickreply);
+    if (this.quick_replies.length > MAX_QUICK_REPLIES) throw new Error('Exceed max quickreplies allow');
   }
 
   useFormdata(formOptions = {}) {
@@ -72,10 +78,18 @@ class Message {
     if (this.formData) {
       // handle upload method
       this.formData.append('recipient', JSON.stringify(this.recipient));
-      this.formData.append('message', JSON.stringify({
-        attachment: this.attachment.attachment
-      }));
+      if (this.quick_replies.length) {
+        this.formData.append('message', JSON.stringify({
+          attachment: this.attachment.attachment,
+          quick_replies: this.quick_replies
+        }));
+      } else {
+        this.formData.append('message', JSON.stringify({
+          attachment: this.attachment.attachment
+        }));
+      }
       this.formData.append('filedata', this.attachment.filedata);
+
       output = this.formData;
     } else {
       // normal json object
@@ -92,6 +106,7 @@ class Message {
 
       if (this.texts.length) output.message.text = this.texts.join('\n');
       if (this.attachment) output.message = this.attachment;
+      if (this.quick_replies.length) output.message.quick_replies = this.quick_replies;
     }
 
     if (this.notificationType) output.notifciation_type = this.notificationType;
