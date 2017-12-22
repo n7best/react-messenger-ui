@@ -1,6 +1,18 @@
 import React from 'react';
-import { render, Message, Text, QuickReply } from '../src';
+import FormData from 'form-data';
+import { fs } from 'memfs'
+import { render, Message, Text, Attachment, QuickReply } from '../src';
 import { CONSTANTS } from '../src/components/Messaging/index';
+
+beforeAll(() => {
+  fs.writeFileSync('/hello.jpg', 'IMAGE_DATA');
+
+  // avoid random boundry
+  FormData.prototype._generateBoundary = function () {
+    var boundary = '--------------------------';
+    this._boundary = boundary;
+  };
+});
 
 test('should render basic text response with quickreply', () => {
   const App = () => (
@@ -50,6 +62,44 @@ test('should render basic text response with location quick reply', () => {
       }
     }
   );
+});
+
+test('should render quickreply with file upload', () => {
+  const file = fs.readFileSync('/hello.jpg', 'utf8')
+  const expectFormData = new FormData();
+  expectFormData.append('recipient', JSON.stringify({ id: '<PSID>' }));
+  expectFormData.append('message', JSON.stringify({
+    attachment: {
+      type: 'audio',
+      payload: {
+        is_reusable: true
+      }
+    },
+    quick_replies: [
+      {
+        content_type: 'text',
+        title: 'Search',
+        payload: '<POSTBACK_PAYLOAD>'
+      },
+      {
+        content_type: 'location',
+      }
+    ]
+  }));
+  expectFormData.append('filedata', file);
+
+  const App = () => (
+    <Message recipient={{ id: '<PSID>' }}>
+      <Attachment
+        file={file}
+        type={CONSTANTS.ATTACHMENT_TYPE.AUDIO}
+        source={CONSTANTS.ATTACHMENT_SOURCE.FILE} />
+      <QuickReply title="Search" payload="<POSTBACK_PAYLOAD>" />
+      <QuickReply type={CONSTANTS.QUICKREPLY_TYPE.LOCATION} />
+    </Message>
+  )
+
+  expect(JSON.stringify(render(<App />))).toEqual(JSON.stringify(expectFormData));
 });
 
 test('should throw over max quickreply allow', () => {

@@ -78,17 +78,20 @@ class Message {
     if (this.formData) {
       // handle upload method
       this.formData.append('recipient', JSON.stringify(this.recipient));
+
+      const { filedata, ...attachment } = this.attachment;
+
       if (this.quick_replies.length) {
-        this.formData.append('message', JSON.stringify({
-          attachment: this.attachment.attachment,
-          quick_replies: this.quick_replies
-        }));
+        this.formData.append('message', JSON.stringify(Object.assign({}, {
+          attachment,
+          quick_replies: this.quick_replies.length ? this.quick_replies : null
+        })));
       } else {
         this.formData.append('message', JSON.stringify({
-          attachment: this.attachment.attachment
+          attachment
         }));
       }
-      this.formData.append('filedata', this.attachment.filedata);
+      this.formData.append('filedata', filedata);
 
       output = this.formData;
     } else {
@@ -105,7 +108,7 @@ class Message {
       };
 
       if (this.texts.length) output.message.text = this.texts.join('\n');
-      if (this.attachment) output.message = this.attachment;
+      if (this.attachment) output.message.attachment = this.attachment;
       if (this.quick_replies.length) output.message.quick_replies = this.quick_replies;
     }
 

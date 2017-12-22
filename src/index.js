@@ -4,9 +4,13 @@ import CONSTANTS from './components/Messaging/constants';
 const version = '0.0.1';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
-const SenderAction = 'SENDER_ACTION';
+const SenderAction = 'SENDERACTION';
 const Attachment = 'ATTACHMENT';
 const QuickReply = 'QUICKREPLY';
+const Button = 'BUTTON';
+const URLButton = 'URLBUTTON';
+const Template = 'TEMPLATE';
+const ButtonTemplate = 'BUTTONTEMPLATE';
 
 export {
   render,
@@ -15,6 +19,10 @@ export {
   SenderAction,
   Attachment,
   QuickReply,
+  Button,
+  URLButton,
+  Template,
+  ButtonTemplate,
   CONSTANTS,
   version
 };

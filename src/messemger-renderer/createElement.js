@@ -1,16 +1,17 @@
-import { Message, Text, Response, SenderAction, Attachment, QuickReply } from '../components/Messaging';
+import * as components from '../components/Messaging';
+
+const { Response, CONSTANTS, ...others } = components;
 
 function createElement(type, props, root) {
-  console.log('creating element', type, props, root)
+  console.log('creating element', type, props, root);
   const COMPONENTS = {
-    MESSAGE: () => new Message(root, props),
-    TEXT: () => new Text(root, props),
     RESPONSE: () => new Response(),
-    SENDER_ACTION: () => new SenderAction(root, props),
-    ATTACHMENT: () => new Attachment(root, props),
-    QUICKREPLY: () => new QuickReply(root, props),
     default: undefined
   };
+
+  Object.keys(others).forEach((key) => {
+    COMPONENTS[key.toUpperCase()] = () => new others[key](root, props);
+  });
 
   return COMPONENTS[type]() || COMPONENTS.default;
 }

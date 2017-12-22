@@ -55,6 +55,86 @@ export const QUICKREPLY_TYPE = {
 
 export const MAX_QUICK_REPLIES = 11;
 
+export const TEMPLATE_TYPE = {
+  BUTTON: 'button',
+  GENERIC: 'generic',
+  LIST: 'list',
+  OPEN_GRAPH: 'open_graph',
+  MEDIA: 'media',
+  RECEIPT: 'receipt',
+  AIRLINE: 'airline'
+};
+
+export const BUTTON_TYPE = {
+  URL: 'web_url',
+  POSTBACK: 'postback',
+  SHARE: 'element_share',
+  BUY: 'payment',
+  CALL: 'phone_number',
+  LOG_IN: 'account_link',
+  LOG_OUT: 'account_unlink',
+  GAME_PLAY: 'game_play'
+}
+
+export const BUTTON_TEMPLATE_SUPPORT = {
+  [BUTTON_TYPE.URL]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.BUTTON,
+    TEMPLATE_TYPE.MEDIA,
+    TEMPLATE_TYPE.OPEN_GRAPH
+  ],
+  [BUTTON_TYPE.POSTBACK]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.BUTTON,
+    TEMPLATE_TYPE.MEDIA
+  ],
+  [BUTTON_TYPE.SHARE]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.MEDIA
+  ],
+  [BUTTON_TYPE.BUY]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.MEDIA
+  ],
+  [BUTTON_TYPE.CALL]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.BUTTON,
+    TEMPLATE_TYPE.MEDIA
+  ],
+  [BUTTON_TYPE.LOG_IN]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.BUTTON,
+    TEMPLATE_TYPE.MEDIA
+  ],
+  [BUTTON_TYPE.LOG_OUT]: [
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.BUTTON,
+    TEMPLATE_TYPE.MEDIA
+  ],
+  [BUTTON_TYPE.GAME_PLAY]: [
+    // todo: pending documentation update
+    TEMPLATE_TYPE.GENERIC,
+    TEMPLATE_TYPE.LIST,
+    TEMPLATE_TYPE.BUTTON,
+    TEMPLATE_TYPE.MEDIA
+  ]
+};
+
+export const BUTTON_TEMPLATE_TEXT_MAXLENGTH = 640;
+
+export const WEBVIEW_HEIGHT_RATIO = {
+  COMPACT: 'compact',
+  TALL: 'tall',
+  FULL: 'full'
+};
+
 export default {
   MESSAGING_TYPE,
   SENDER_ACTIONS,
@@ -63,5 +143,7 @@ export default {
   ATTACHMENT_SOURCE,
   MAX_QUICK_REPLIES,
   QUICKREPLY_TYPE,
+  TEMPLATE_TYPE,
+  WEBVIEW_HEIGHT_RATIO,
   TAGS
 };

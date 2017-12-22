@@ -4,6 +4,8 @@ import Response from './Response';
 import SenderAction from './SenderAction';
 import Attachment from './Attachment';
 import QuickReply from './QuickReply';
+import { Button, URLButton } from './Button';
+import { Template, ButtonTemplate } from './Template';
 import CONSTANTS from './constants';
 
 export {
@@ -13,5 +15,9 @@ export {
   SenderAction,
   Attachment,
   QuickReply,
+  Button,
+  URLButton,
+  Template,
+  ButtonTemplate,
   CONSTANTS
 };

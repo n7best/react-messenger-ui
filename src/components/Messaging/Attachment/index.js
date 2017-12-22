@@ -11,6 +11,7 @@ class Attachment {
     this.url = props.url || false;
     this.attachment_id = props.attachment_id || false;
     this.file = props.file || false;
+    this.template = null;
   }
 
   appendChild() {
@@ -22,44 +23,43 @@ class Attachment {
   }
 
   render(Message) {
-    // Todo: validation attachment type
-    switch (this.source) {
-      case ATTACHMENT_SOURCE.URL:
-        if (!this.url) throw new Error('Must provide url for attachment');
-        return Message.addAttachment({
-          attachment: {
-            type: this.type,
-            payload: {
-              url: this.url,
-              is_reusable: this.reusable
-            }
-          }
-        });
-      case ATTACHMENT_SOURCE.FILE:
-        if (!this.file) throw new Error('Must provide file for attachment');
-        Message.useFormdata();
-        return Message.addAttachment({
-          attachment: {
-            type: this.type,
-            payload: {
-              is_reusable: this.reusable
-            }
-          },
-          filedata: this.file
-        });
-      case ATTACHMENT_SOURCE.SAVED_ASSET:
-        if (!this.attachment_id) throw new Error('Must provide attachment_id for attachment');
-        return Message.addAttachment({
-          attachment: {
-            type: this.type,
-            payload: {
-              attachment_id: this.attachment_id
-            }
-          }
-        });
-      default:
-        throw new Error('Source type is not valid');
+    const attachment = {
+      type: this.type,
+      payload: {}
     }
+
+    // Todo: validation attachment type
+    if (this.type === ATTACHMENT_TYPE.TEMPLATE) {
+      attachment.payload = this.template;
+    } else {
+      switch (this.source) {
+        case ATTACHMENT_SOURCE.URL:
+          if (!this.url) throw new Error('Must provide url for attachment');
+          attachment.payload = {
+            url: this.url,
+            is_reusable: this.reusable
+          };
+          break;
+        case ATTACHMENT_SOURCE.FILE:
+          if (!this.file) throw new Error('Must provide file for attachment');
+          Message.useFormdata();
+          attachment.payload = {
+            is_reusable: this.reusable
+          };
+          attachment.filedata = this.file;
+          break;
+        case ATTACHMENT_SOURCE.SAVED_ASSET:
+          if (!this.attachment_id) throw new Error('Must provide attachment_id for attachment');
+          attachment.payload = {
+            attachment_id: this.attachment_id
+          };
+          break;
+        default:
+          throw new Error('Source type is not valid');
+      }
+    }
+
+    Message.addAttachment(attachment);
   }
 }
 
