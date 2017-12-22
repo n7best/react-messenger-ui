@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "test": "jest",
+    "test": "jest --silent --expand --colors --verbose",
     "build": "cross-env NODE_ENV=production babel src -d lib",
     "lint": "eslint ./src",
     "test:coverage": "jest --coverage",
@@ -37,11 +37,13 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "jest": "^22.0.3"
+    "jest": "^22.0.3",
+    "memfs": "^2.6.0"
   },
   "dependencies": {
-    "react": "^16.2.0",
     "fbjs": "^0.8.16",
+    "form-data": "^2.3.1",
+    "react": "^16.2.0",
     "react-reconciler": "^0.7.0"
   },
   "jest": {

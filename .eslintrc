@@ -17,7 +17,8 @@
     "jsx-a11y/no-static-element-interactions": [1],
     "react/sort-comp": [1],
     "jsx-a11y/alt-text": [1],
-    "import/prefer-default-export": [0]
+    "import/prefer-default-export": [0],
+    "camelcase":[0]
   },
   "globals": {
     "__DEV__": true,

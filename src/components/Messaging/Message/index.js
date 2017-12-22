@@ -1,26 +1,23 @@
+import FormData from 'form-data';
+import Recipient from './Recipient';
 import { MESSAGING_TYPE } from '../constants';
 
 class Message {
   children = [];
 
   constructor(root, props) {
+    if (!props.recipient) {
+      throw new Error('Message must have recipient');
+    }
     this.root = root;
     this.props = props;
     this.texts = [];
+    this.attachment = null;
     this.type = props.type || MESSAGING_TYPE.RESPONSE;
-    this.recipient = props.recipient || { id: '' };
-
-    /*
-      Message state to display to the user:
-
-      typing_on: display the typing bubble
-      typing_off: remove the typing bubble
-      mark_seen: display the confirmation icon
-      Cannot be sent with message.Must be sent as a separate request.
-
-      When using sender_action, recipient should be the only other property set in the request.
-     */
-    this.sender_action = props.senderAction || false;
+    this.recipient = new Recipient(props.recipient);
+    this.notificationType = props.notificationType || false;
+    this.tag = props.tag || false;
+    this.formData = null;
   }
 
   appendChild(child) {
@@ -38,41 +35,83 @@ class Message {
     this.texts.push(text);
   }
 
+  addAttachment(attachment) {
+    this.attachment = attachment;
+  }
+
+  useFormdata(formOptions = {}) {
+    this.formData = new FormData(formOptions);
+
+    return this.formData;
+  }
+
   renderChildren() {
     this.children.forEach((child) => {
       if (typeof child === 'string') {
         this.texts.push(child);
       } else if (child.constructor.name === 'Text') {
-        this.texts.push(child.render());
+        this.texts.push(child.render(this));
       } else {
-        child.render();
+        child.render(this);
       }
     });
+  }
+
+  removeEmpty(obj) {
+    Object.keys(obj).forEach(key =>
+      (obj[key] && typeof obj[key] === 'object') && this.removeEmpty(obj[key]) ||
+      (obj[key] === undefined) && delete obj[key]); // eslint-disable-line
+    return obj;
   }
 
   render() {
     this.renderChildren();
 
-    return {
-      messaging_type: this.type,
-      recipient: this.recipient,
-      /*
-        id: '<PSID>'
+    let output;
 
-        Phone number: If you know a user's phone number, you can specify recipient.phone_number
-        in the API request. This will send a message request to the recipient, without
-        requiring them to interact with your page first. Sending messages to phone
-        numbers requires the pages_messaging_phone_number permission. For more
-        information, see Customer Matching.
-      */
+    if (this.formData) {
+      // handle upload method
+      this.formData.append('recipient', JSON.stringify(this.recipient));
+      this.formData.append('message', JSON.stringify({
+        attachment: this.attachment.attachment
+      }));
+      this.formData.append('filedata', this.attachment.filedata);
+      output = this.formData;
+    } else {
+      // normal json object
 
-      /*
-        User Ref: For more information, see https://developers.facebook.com/docs/messenger-platform/discovery/checkbox-plugin.
-      */
-      message: {
-        text: this.texts.join(' '),
+      if (this.texts.length && this.attachment) {
+        throw new Error('Message will only accept Text or Attachment, not both');
       }
-    };
+
+      output = {
+        messaging_type: this.type,
+        recipient: this.recipient,
+        message: {}
+      };
+
+      if (this.texts.length) output.message.text = this.texts.join('\n');
+      if (this.attachment) output.message = this.attachment;
+    }
+
+    if (this.notificationType) output.notifciation_type = this.notificationType;
+
+    // this.formData.append('recipient', this.recipient);
+    /*
+      Todo:
+      implements:
+      Supported Message Types
+      Only generic template messages can be sent with tags other than ISSUE_RESOLUTION.
+      ISSUE_RESOLUTION tag can be used with either generic template messages or text messages.
+
+      ref: https://developers.facebook.com/docs/messenger-platform/send-messages/message-tags
+    */
+    if (this.tag) output.tag = this.tag;
+
+
+    // sanity the ouput
+    if (!this.formData) this.removeEmpty(output);
+    return output;
   }
 }
 

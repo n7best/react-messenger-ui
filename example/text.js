@@ -5,6 +5,6 @@ const App = () => (
   <Message>
     <Text>hi</Text>
   </Message>
-)
+);
 
 render(<App />);

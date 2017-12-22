@@ -1,4 +1,5 @@
-import { MESSAGING_TYPE, SENDER_ACTIONS } from '../constants';
+import Message from '../Message';
+import { SENDER_ACTIONS } from '../constants';
 
 /*
   Message state to display to the user:
@@ -10,21 +11,17 @@ import { MESSAGING_TYPE, SENDER_ACTIONS } from '../constants';
 
   When using sender_action, recipient should be the only other property set in the request.
 */
-class SenderAction {
-
+class SenderAction extends Message {
   constructor(root, props) {
-    this.root = root;
-    this.props = props;
-    this.type = props.type || MESSAGING_TYPE.RESPONSE;
+    super(root, props);
     this.action = props.action || SENDER_ACTIONS.TYPING_ON;
-    this.recipient = props.recipient || { id: '' };
   }
 
-  appendChild(child) {
+  appendChild() {
     // noop
   }
 
-  removeChild(child) {
+  removeChild() {
     // noop
   }
 
