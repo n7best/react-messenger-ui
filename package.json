@@ -1,5 +1,5 @@
 {
-  "name": "messenger-ui",
+  "name": "react-messenger-ui",
   "version": "0.0.1",
   "description": "",
   "scripts": {
@@ -9,6 +9,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/n7best/react-messenger-ui.git"
