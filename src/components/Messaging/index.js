@@ -5,7 +5,7 @@ import SenderAction from './SenderAction';
 import Attachment from './Attachment';
 import QuickReply from './QuickReply';
 import { Button, URLButton, PostbackButton, ShareButton, CallButton, LoginButton, LogoutButton, GameplayButton } from './Button';
-import { Template, ButtonTemplate } from './Template';
+import { Template, ButtonTemplate, Element, GenericElement, GenericTemplate } from './Template';
 import CONSTANTS from './constants';
 
 export {
@@ -24,6 +24,9 @@ export {
   LogoutButton,
   GameplayButton,
   Template,
+  Element,
+  GenericElement,
   ButtonTemplate,
+  GenericTemplate,
   CONSTANTS
 };

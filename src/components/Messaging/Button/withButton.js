@@ -21,15 +21,35 @@ function withButton(type) {
 
           this.template.buttons.push(button.render());
 
-          // todo: validate buttons
+          if (this.buttons && this.buttons.length > this.maxButtonLimit) throw new Error(`exceed max button allow for ${this.template.template_type}`);
+        }
+      }
+    }
+
+    class ElementWithButton extends Class {
+      constructor(root, props) {
+        super(root, props);
+        // initialize button
+        this.buttons = [];
+      }
+
+      addButton(button) {
+        if (button instanceof Button) {
+          if (BUTTON_TEMPLATE_SUPPORT[button.type].indexOf(this.templateType) === -1) {
+            throw new Error(`Button type: ${button.type} is not support by Template: ${this.templateType}`);
+          }
+          this.buttons.push(button.render());
+          if (this.buttons.length > this.maxButtonLimit) throw new Error(`exceed max button allow for ${this.templateType} element`);
         }
       }
     }
 
     return (root, props) => {
-      switch (type) {
+      switch (type.toLowerCase()) {
         case 'template':
           return new TemplateWithButton(root, props);
+        case 'element':
+          return new ElementWithButton(root, props);
         default:
           throw new Error('withButton type not valid');
       }

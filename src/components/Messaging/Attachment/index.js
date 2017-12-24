@@ -30,7 +30,7 @@ class Attachment {
 
     // Todo: validation attachment type
     if (this.type === ATTACHMENT_TYPE.TEMPLATE) {
-      attachment.payload = this.template;
+      attachment.payload = this.renderTemplate();
     } else {
       switch (this.source) {
         case ATTACHMENT_SOURCE.URL:

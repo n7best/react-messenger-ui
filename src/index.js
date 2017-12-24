@@ -1,7 +1,7 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.3';
+const version = '0.0.4';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDERACTION';
@@ -16,7 +16,10 @@ const LoginButton = 'LOGINBUTTON';
 const LogoutButton = 'LOGOUTBUTTON';
 const GameplayButton = 'GAMEPLAYBUTTON';
 const Template = 'TEMPLATE';
+const Element = 'ELEMENT';
+const GenericElement = 'GENERICELEMENT';
 const ButtonTemplate = 'BUTTONTEMPLATE';
+const GenericTemplate = 'GENERICTEMPLATE';
 
 export {
   render,
@@ -34,7 +37,10 @@ export {
   LogoutButton,
   GameplayButton,
   Template,
+  Element,
+  GenericElement,
   ButtonTemplate,
+  GenericTemplate,
   CONSTANTS,
   version
 };

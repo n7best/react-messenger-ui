@@ -11,6 +11,7 @@ class Template extends Attachment {
     this.supportButtons = false;
     this.maxButtonLimit = 0;
     this.minButtonLimit = 0;
+    this.maxElementLimit = 0;
 
     this.template = {
       template_type: props.type || TEMPLATE_TYPE.GENERIC
@@ -21,6 +22,10 @@ class Template extends Attachment {
       this.template.buttons = [];
       this.supportButtons = true;
     } */
+  }
+
+  renderTemplate() {
+    return this.template;
   }
 
   addButton(button) {

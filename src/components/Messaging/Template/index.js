@@ -1,7 +1,12 @@
 import Template from './Template';
+import Element from './Element';
 import ButtonTemplate from './ButtonTemplate';
+import { GenericTemplate, GenericElement } from './Generic';
 
 export {
   Template,
-  ButtonTemplate
+  Element,
+  ButtonTemplate,
+  GenericTemplate,
+  GenericElement
 };

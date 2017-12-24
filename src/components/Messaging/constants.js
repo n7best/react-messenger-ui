@@ -135,6 +135,11 @@ export const WEBVIEW_HEIGHT_RATIO = {
   FULL: 'full'
 };
 
+export const IMAGE_ASPECT_RATIO = {
+  HORIZONTAL: 'horizontal',
+  SQUARE: 'square'
+};
+
 export default {
   MESSAGING_TYPE,
   SENDER_ACTIONS,
@@ -145,5 +150,6 @@ export default {
   QUICKREPLY_TYPE,
   TEMPLATE_TYPE,
   WEBVIEW_HEIGHT_RATIO,
+  IMAGE_ASPECT_RATIO,
   TAGS
 };
