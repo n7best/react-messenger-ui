@@ -1,5 +1,5 @@
 import Button from './Button';
-import { BUTTON_TYPE, WEBVIEW_HEIGHT_RATIO} from '../constants';
+import { BUTTON_TYPE, WEBVIEW_HEIGHT_RATIO } from '../constants';
 
 class URLButton extends Button {
   constructor(root, props) {

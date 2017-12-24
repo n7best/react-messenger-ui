@@ -33,7 +33,7 @@ class QuickReply {
     */
     const quickreply = {
       content_type: this.type
-    }
+    };
 
     switch (this.type) {
       case QUICKREPLY_TYPE.TEXT:

@@ -26,7 +26,7 @@ class Attachment {
     const attachment = {
       type: this.type,
       payload: {}
-    }
+    };
 
     // Todo: validation attachment type
     if (this.type === ATTACHMENT_TYPE.TEMPLATE) {

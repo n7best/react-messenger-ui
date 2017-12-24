@@ -107,7 +107,7 @@ class Message {
         message: {}
       };
 
-      if (this.texts.length) output.message.text = this.texts.join('\n');
+      if (this.texts.length) output.message.text = this.texts.join('');
       if (this.attachment) output.message.attachment = this.attachment;
       if (this.quick_replies.length) output.message.quick_replies = this.quick_replies;
     }

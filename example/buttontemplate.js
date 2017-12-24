@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, Message, ButtonTemplate, URLButton } from '../src';
+import { render, Message, ButtonTemplate, URLButton, PostbackButton } from '../src';
 
 const App = () => (
   <Message recipient={{ id: '<PSID>' }}>
@@ -8,6 +8,9 @@ const App = () => (
       <URLButton url="magic link">
         world
       </URLButton>
+      <PostbackButton payload="magic payload">
+        world
+      </PostbackButton>
     </ButtonTemplate>
   </Message>
 );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render basic text response 1`] = `
+exports[`should render button tempalte response 1`] = `
 Object {
   "message": Object {
     "attachment": Object {
@@ -10,6 +10,16 @@ Object {
             "title": "world",
             "type": "web_url",
             "url": "magic link",
+          },
+          PostbackButton {
+            "payload": "magic payload",
+            "title": "world",
+            "type": "postback",
+          },
+          CallButton {
+            "payload": "+1234567890",
+            "title": "call",
+            "type": "phone_number",
           },
         ],
         "template_type": "button",

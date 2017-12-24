@@ -4,8 +4,8 @@
  */
 const parse = (input) => {
   function parseComponent(inputComponent) {
-    console.log('parsing', inputComponent);
-    return inputComponent.render();;
+    // console.log('parsing', inputComponent);
+    return inputComponent.render();
   }
 
   function toBuffer() {

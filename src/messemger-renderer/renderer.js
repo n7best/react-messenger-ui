@@ -1,13 +1,20 @@
+/* eslint-disable no-param-reassign */
 import Reconciler from 'react-reconciler';
 import emptyObject from 'fbjs/lib/emptyObject';
 
 import { createElement } from './createElement';
 
+function log(...args) {
+  if (process.env.NODE_ENV === 'development') {
+    console.log(...args);
+  }
+}
+
 export const Renderer = Reconciler({
   appendInitialChild(parentInstance, child) {
-    console.log('appendinitial', parentInstance, child, typeof child);
-    if(typeof child === 'string'){
-      console.log('invariant string')
+    log('appendinitial', parentInstance, child, typeof child);
+    if (typeof child === 'string') {
+      log('invariant string');
       return;
     }
     parentInstance.appendChild(child);
@@ -17,11 +24,11 @@ export const Renderer = Reconciler({
     return createElement(type, props, internalInstanceHandle);
   },
 
-  createTextInstance(text, rootContainerInstance, internalInstanceHandle) {
+  createTextInstance(text) {
     return text;
   },
 
-  finalizeInitialChildren(wordElement, type, props) {
+  finalizeInitialChildren() {
     return false;
   },
 
@@ -30,37 +37,37 @@ export const Renderer = Reconciler({
   },
 
   prepareForCommit(...rest) {
-    console.log('prepareForCommit', rest);
+    log('prepareForCommit', rest);
     // noop
   },
 
   prepareUpdate(wordElement, type, oldProps, newProps) {
-    console.log('prepareUpdate', wordElement, type, oldProps, newProps);
+    log('prepareUpdate', wordElement, type, oldProps, newProps);
     return true;
   },
 
   resetAfterCommit(...rest) {
-    console.log('resetAfterCommit', rest);
+    log('resetAfterCommit', rest);
     // noop
   },
 
   resetTextContent(wordElement) {
-    console.log('resetTextContent', wordElement);
+    log('resetTextContent', wordElement);
     // noop
   },
 
   getRootHostContext(rootInstance) {
-    console.log('getRootHostContext', rootInstance);
+    log('getRootHostContext', rootInstance);
     // You can use this 'rootInstance' to pass data from the roots.
   },
 
   getChildHostContext(...rest) {
-    console.log('getChildHostContext', rest);
+    log('getChildHostContext', rest);
     return emptyObject;
   },
 
   shouldSetTextContent(type, props) {
-    console.log('shouldSetTextContent', type, props);
+    log('shouldSetTextContent', type, props);
     return (
       type === 'Text' ||
       typeof props.children === 'string' ||
@@ -69,7 +76,7 @@ export const Renderer = Reconciler({
   },
 
   now: () => () => {
-    console.log('now');
+    log('now');
     // noop
   },
 
@@ -78,7 +85,7 @@ export const Renderer = Reconciler({
 
   mutation: {
     appendChild(parentInstance, child) {
-      console.log('mutation', parentInstance, child);
+      log('mutation', parentInstance, child);
       if (parentInstance.appendChild) {
         parentInstance.appendChild(child);
       } else {
@@ -87,7 +94,7 @@ export const Renderer = Reconciler({
     },
 
     appendChildToContainer(parentInstance, child) {
-      console.log('appendChildToContainer', parentInstance, child);
+      log('appendChildToContainer', parentInstance, child);
       if (parentInstance.appendChild) {
         parentInstance.appendChild(child, parentInstance);
       } else {
@@ -103,21 +110,21 @@ export const Renderer = Reconciler({
       parentInstance.removeChild(child);
     },
 
-    insertBefore(parentInstance, child, beforeChild) {
+    insertBefore() {
       // noob
     },
 
-    commitUpdate(instance, updatePayload, type, oldProps, newProps) {
+    commitUpdate() {
       // noop
     },
 
-    commitMount(instance, updatePayload, type, oldProps, newProps) {
+    commitMount() {
       // noop
     },
 
     commitTextUpdate(textInstance, oldText, newText) {
-      console.log('commitTextUpdate', textInstance, oldText, newText);
+      log('commitTextUpdate', textInstance, oldText, newText);
       textInstance.children = newText;
-    },
+    }
   }
-})
+});

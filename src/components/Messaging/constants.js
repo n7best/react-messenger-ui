@@ -45,7 +45,7 @@ export const ATTACHMENT_TYPE = {
 export const ATTACHMENT_SOURCE = {
   URL: 'url',
   FILE: 'file',
-  SAVED_ASSET: 'attachment_id',
+  SAVED_ASSET: 'attachment_id'
 };
 
 export const QUICKREPLY_TYPE = {
@@ -74,7 +74,7 @@ export const BUTTON_TYPE = {
   LOG_IN: 'account_link',
   LOG_OUT: 'account_unlink',
   GAME_PLAY: 'game_play'
-}
+};
 
 export const BUTTON_TEMPLATE_SUPPORT = {
   [BUTTON_TYPE.URL]: [
