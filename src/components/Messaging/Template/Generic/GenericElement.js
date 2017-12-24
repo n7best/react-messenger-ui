@@ -32,7 +32,7 @@ class GenericElement extends Element {
     return {
       title: this.title,
       subtitle: this.subtitle,
-      iamge_url: this.image_url,
+      image_url: this.image_url,
       default_action: defaultAction || undefined,
       buttons: this.buttons
     };
