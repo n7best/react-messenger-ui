@@ -140,6 +140,11 @@ export const IMAGE_ASPECT_RATIO = {
   SQUARE: 'square'
 };
 
+export const TOP_ELEMENT_STYLE = {
+  COMPACT: 'compact',
+  LARGE: 'large'
+};
+
 export default {
   MESSAGING_TYPE,
   SENDER_ACTIONS,
@@ -151,5 +156,6 @@ export default {
   TEMPLATE_TYPE,
   WEBVIEW_HEIGHT_RATIO,
   IMAGE_ASPECT_RATIO,
+  TOP_ELEMENT_STYLE,
   TAGS
 };

@@ -1,7 +1,7 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.5';
+const version = '0.0.6';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDERACTION';
@@ -20,6 +20,8 @@ const Element = 'ELEMENT';
 const GenericElement = 'GENERICELEMENT';
 const ButtonTemplate = 'BUTTONTEMPLATE';
 const GenericTemplate = 'GENERICTEMPLATE';
+const ListTemplate = 'LISTTEMPLATE';
+const ListElement = 'LISTELEMENT';
 
 export {
   render,
@@ -41,6 +43,8 @@ export {
   GenericElement,
   ButtonTemplate,
   GenericTemplate,
+  ListTemplate,
+  ListElement,
   CONSTANTS,
   version
 };

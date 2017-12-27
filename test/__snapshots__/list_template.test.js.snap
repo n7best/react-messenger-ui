@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render list tempalte response 1`] = `
+Object {
+  "message": Object {
+    "attachment": Object {
+      "payload": Object {
+        "buttons": Array [],
+        "elements": Array [
+          Object {
+            "buttons": Array [
+              URLButton {
+                "title": "world",
+                "type": "web_url",
+                "url": "magic link",
+              },
+            ],
+            "title": "Generic Element",
+          },
+          Object {
+            "buttons": Array [
+              URLButton {
+                "title": "world",
+                "type": "web_url",
+                "url": "magic link",
+              },
+            ],
+            "title": "Generic Element 2",
+          },
+        ],
+        "template_type": "list",
+      },
+      "type": "template",
+    },
+  },
+  "messaging_type": "RESPONSE",
+  "recipient": Recipient {
+    "id": "<PSID>",
+  },
+}
+`;

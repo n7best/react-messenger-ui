@@ -1,18 +1,20 @@
 /* eslint-disable no-param-reassign */
 import { TEMPLATE_TYPE } from '../../constants';
+import { withButton } from '../../Button';
 import Template from '../Template';
 
-class GenericTemplate extends Template {
+@withButton('template')
+class ListTemplate extends Template {
   constructor(root, props) {
     super(root, {
-      type: TEMPLATE_TYPE.GENERIC,
+      type: TEMPLATE_TYPE.LIST,
       children: props.children
     });
 
     this.sharable = props.sharable;
-    this.image_aspect_ratio = props.imageAspectRatio;
-    this.maxElementLimit = 4;
-    this.minElementLimit = 2;
+    this.top_element_style = props.topElementStyle;
+    this.maxElementLimit = 10;
+    this.maxButtonLimit = 1;
     this.elements = [];
   }
 
@@ -28,8 +30,8 @@ class GenericTemplate extends Template {
 
   renderTemplate() {
     return Object.assign({}, this.template, {
-      sharable: this.sharable,
-      image_aspect_ratio: this.image_aspect_ratio,
+      top_element_style: this.top_element_style,
+      buttons: this.template.buttons,
       elements: this.elements.map(element => element.render())
     });
   }
@@ -41,4 +43,4 @@ class GenericTemplate extends Template {
   }
 }
 
-export default GenericTemplate;
+export default ListTemplate;
