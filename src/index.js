@@ -1,7 +1,7 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.10';
+const version = '0.0.11';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDERACTION';
