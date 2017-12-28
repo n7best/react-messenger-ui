@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render persistent menu 1`] = `
+Object {
+  "persistent_menu": Array [
+    Object {
+      "call_to_actions": Array [
+        URLButton {
+          "fallback_url": undefined,
+          "messenger_extensions": undefined,
+          "title": "world",
+          "type": "web_url",
+          "url": "magic link",
+          "webview_height_ratio": undefined,
+          "webview_share_button": undefined,
+        },
+        PostbackButton {
+          "payload": "magic payload",
+          "title": "world",
+          "type": "postback",
+        },
+        Object {
+          "call_to_actions": Array [
+            URLButton {
+              "fallback_url": undefined,
+              "messenger_extensions": undefined,
+              "title": "world",
+              "type": "web_url",
+              "url": "magic link",
+              "webview_height_ratio": undefined,
+              "webview_share_button": undefined,
+            },
+            PostbackButton {
+              "payload": "magic payload",
+              "title": "world",
+              "type": "postback",
+            },
+          ],
+          "title": "More",
+          "type": "nested",
+        },
+      ],
+      "composer_input_disabled": undefined,
+      "locale": "default",
+    },
+    Object {
+      "call_to_actions": Array [
+        URLButton {
+          "fallback_url": undefined,
+          "messenger_extensions": undefined,
+          "title": "world",
+          "type": "web_url",
+          "url": "magic link",
+          "webview_height_ratio": undefined,
+          "webview_share_button": undefined,
+        },
+        PostbackButton {
+          "payload": "magic payload",
+          "title": "world",
+          "type": "postback",
+        },
+        Object {
+          "call_to_actions": Array [
+            URLButton {
+              "fallback_url": undefined,
+              "messenger_extensions": undefined,
+              "title": "world",
+              "type": "web_url",
+              "url": "magic link",
+              "webview_height_ratio": undefined,
+              "webview_share_button": undefined,
+            },
+            PostbackButton {
+              "payload": "magic payload",
+              "title": "world",
+              "type": "postback",
+            },
+          ],
+          "title": "More",
+          "type": "nested",
+        },
+      ],
+      "composer_input_disabled": undefined,
+      "locale": "zh_CN",
+    },
+  ],
+}
+`;

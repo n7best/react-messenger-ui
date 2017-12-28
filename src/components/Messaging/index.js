@@ -7,6 +7,7 @@ import QuickReply from './QuickReply';
 import { Button, URLButton, PostbackButton, ShareButton, CallButton, LoginButton, LogoutButton, GameplayButton } from './Button';
 import { Template, ButtonTemplate, Element, GenericElement, GenericTemplate, ListTemplate, ListElement, MediaTemplate, MediaElement,
   Address, Adjustment, ReceiptElement, ReceiptTemplate, OpenGraphTemplate, OpenGraphElement, Summary } from './Template';
+import { PersistentMenu, Menu, NestedMenu } from './PersistentMenu';
 import CONSTANTS from './constants';
 
 export {
@@ -40,5 +41,8 @@ export {
   Summary,
   OpenGraphTemplate,
   OpenGraphElement,
+  PersistentMenu,
+  Menu,
+  NestedMenu,
   CONSTANTS
 };

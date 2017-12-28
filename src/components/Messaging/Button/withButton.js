@@ -44,12 +44,32 @@ function withButton(type) {
       }
     }
 
+    class MenuWithButton extends Class {
+      constructor(root, props) {
+        super(root, props);
+        // initialize button
+        this.call_to_actions = [];
+      }
+
+      addButton(button) {
+        if (button instanceof Button) {
+          if (BUTTON_TEMPLATE_SUPPORT[button.type].indexOf('persistent_menu') === -1) {
+            throw new Error(`Button type: ${button.type} is not support by persistent_menu`);
+          }
+          this.call_to_actions.push(button.render());
+          if (this.call_to_actions.length > this.maxButtonLimit) throw new Error('exceed max button allow for persistent_menu element');
+        }
+      }
+    }
+
     return (root, props) => {
       switch (type.toLowerCase()) {
         case 'template':
           return new TemplateWithButton(root, props);
         case 'element':
           return new ElementWithButton(root, props);
+        case 'menu':
+          return new MenuWithButton(root, props);
         default:
           throw new Error('withButton type not valid');
       }
