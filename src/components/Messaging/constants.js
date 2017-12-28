@@ -42,6 +42,11 @@ export const ATTACHMENT_TYPE = {
   TEMPLATE: 'template'
 };
 
+export const MEDIA_TYPE = {
+  IMAGE: 'image',
+  VIDEO: 'video'
+};
+
 export const ATTACHMENT_SOURCE = {
   URL: 'url',
   FILE: 'file',
@@ -157,5 +162,6 @@ export default {
   WEBVIEW_HEIGHT_RATIO,
   IMAGE_ASPECT_RATIO,
   TOP_ELEMENT_STYLE,
+  MEDIA_TYPE,
   TAGS
 };

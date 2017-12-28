@@ -7,7 +7,7 @@ class ListElement extends Element {
   constructor(root, props) {
     super(root, props);
 
-    this.templateType = TEMPLATE_TYPE.GENERIC;
+    this.templateType = TEMPLATE_TYPE.LIST;
     this.title = props.title;
     this.subtitle = props.subtitle;
     this.image_url = props.imageUrl;

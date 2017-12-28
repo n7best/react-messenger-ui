@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render media template response 1`] = `
+Object {
+  "message": Object {
+    "attachment": Object {
+      "payload": Object {
+        "elements": Array [
+          Object {
+            "media_type": "image",
+            "url": "<FACEBOOK_URL>",
+          },
+        ],
+        "template_type": "media",
+      },
+      "type": "template",
+    },
+  },
+  "messaging_type": "RESPONSE",
+  "recipient": Recipient {
+    "id": "<PSID>",
+  },
+}
+`;

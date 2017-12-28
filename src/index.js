@@ -1,7 +1,7 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.6';
+const version = '0.0.7';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDERACTION';
@@ -22,6 +22,8 @@ const ButtonTemplate = 'BUTTONTEMPLATE';
 const GenericTemplate = 'GENERICTEMPLATE';
 const ListTemplate = 'LISTTEMPLATE';
 const ListElement = 'LISTELEMENT';
+const MediaTemplate = 'MEDIATEMPLATE';
+const MediaElement = 'MEDIAELEMENT';
 
 export {
   render,
@@ -45,6 +47,8 @@ export {
   GenericTemplate,
   ListTemplate,
   ListElement,
+  MediaTemplate,
+  MediaElement,
   CONSTANTS,
   version
 };

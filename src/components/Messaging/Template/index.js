@@ -3,6 +3,7 @@ import Element from './Element';
 import ButtonTemplate from './ButtonTemplate';
 import { GenericTemplate, GenericElement } from './Generic';
 import { ListTemplate, ListElement } from './List';
+import { MediaTemplate, MediaElement } from './Media';
 
 export {
   Template,
@@ -11,5 +12,7 @@ export {
   GenericTemplate,
   GenericElement,
   ListTemplate,
-  ListElement
+  ListElement,
+  MediaTemplate,
+  MediaElement
 };
