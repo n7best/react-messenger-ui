@@ -4,6 +4,7 @@ import ButtonTemplate from './ButtonTemplate';
 import { GenericTemplate, GenericElement } from './Generic';
 import { ListTemplate, ListElement } from './List';
 import { MediaTemplate, MediaElement } from './Media';
+import { Address, Adjustment, ReceiptElement, ReceiptTemplate, Summary } from './Receipt';
 
 export {
   Template,
@@ -14,5 +15,10 @@ export {
   ListTemplate,
   ListElement,
   MediaTemplate,
-  MediaElement
+  MediaElement,
+  Address,
+  Adjustment,
+  ReceiptElement,
+  ReceiptTemplate,
+  Summary
 };

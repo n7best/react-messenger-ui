@@ -1,7 +1,7 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.8';
+const version = '0.0.9';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDERACTION';
@@ -24,6 +24,12 @@ const ListTemplate = 'LISTTEMPLATE';
 const ListElement = 'LISTELEMENT';
 const MediaTemplate = 'MEDIATEMPLATE';
 const MediaElement = 'MEDIAELEMENT';
+const Address = 'ADDRESS';
+const Adjustment = 'ADJUSTMENT';
+const Summary = 'SUMMARY';
+const ReceiptTemplate = 'RECEIPTTEMPLATE';
+const ReceiptElement = 'RECEIPTELEMENT';
+
 
 export {
   render,
@@ -49,6 +55,11 @@ export {
   ListElement,
   MediaTemplate,
   MediaElement,
+  Address,
+  Adjustment,
+  ReceiptElement,
+  ReceiptTemplate,
+  Summary,
   CONSTANTS,
   version
 };

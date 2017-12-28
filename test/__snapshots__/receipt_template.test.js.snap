@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render list tempalte response 1`] = `
+Object {
+  "message": Object {
+    "attachment": Object {
+      "payload": Object {
+        "address": Address {
+          "city": "Menlo Park",
+          "country": "USA",
+          "postal_code": "94025",
+          "street_1": "1 Hacker Way",
+        },
+        "adjustments": Array [
+          Adjustment {
+            "amount": 20,
+            "name": "New Customer Discount",
+          },
+          Adjustment {
+            "amount": 10,
+            "name": "$10 Off Coupon",
+          },
+        ],
+        "currency": "USD",
+        "elements": Array [
+          Object {
+            "currency": "USD",
+            "image_url": "http://petersapparel.parseapp.com/img/whiteshirt.png",
+            "price": 50,
+            "quantity": 2,
+            "title": "Classic White T-shirt",
+          },
+          Object {
+            "currency": "USD",
+            "image_url": "http://petersapparel.parseapp.com/img/grayshirt.png",
+            "price": 25,
+            "quantity": 1,
+            "title": "Classic Gray T-shirt",
+          },
+        ],
+        "order_number": "12345678902",
+        "payment_method": "Visa 1234",
+        "recipient_name": "Charlie",
+        "summary": Summary {
+          "shipping_cost": 4.95,
+          "subtotal": 75,
+          "total_cost": 56.14,
+          "total_tax": 6.19,
+        },
+        "template_type": "receipt",
+        "timestamp": "1428444852",
+      },
+      "type": "template",
+    },
+  },
+  "messaging_type": "RESPONSE",
+  "recipient": Recipient {
+    "id": "<PSID>",
+  },
+}
+`;
