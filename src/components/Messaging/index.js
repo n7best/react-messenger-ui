@@ -6,7 +6,7 @@ import Attachment from './Attachment';
 import QuickReply from './QuickReply';
 import { Button, URLButton, PostbackButton, ShareButton, CallButton, LoginButton, LogoutButton, GameplayButton } from './Button';
 import { Template, ButtonTemplate, Element, GenericElement, GenericTemplate, ListTemplate, ListElement, MediaTemplate, MediaElement,
-  Address, Adjustment, ReceiptElement, ReceiptTemplate, Summary } from './Template';
+  Address, Adjustment, ReceiptElement, ReceiptTemplate, OpenGraphTemplate, OpenGraphElement, Summary } from './Template';
 import CONSTANTS from './constants';
 
 export {
@@ -38,5 +38,7 @@ export {
   ReceiptElement,
   ReceiptTemplate,
   Summary,
+  OpenGraphTemplate,
+  OpenGraphElement,
   CONSTANTS
 };

@@ -5,6 +5,7 @@ import { GenericTemplate, GenericElement } from './Generic';
 import { ListTemplate, ListElement } from './List';
 import { MediaTemplate, MediaElement } from './Media';
 import { Address, Adjustment, ReceiptElement, ReceiptTemplate, Summary } from './Receipt';
+import { OpenGraphElement, OpenGraphTemplate } from './OpenGraph';
 
 export {
   Template,
@@ -20,5 +21,7 @@ export {
   Adjustment,
   ReceiptElement,
   ReceiptTemplate,
+  OpenGraphTemplate,
+  OpenGraphElement,
   Summary
 };

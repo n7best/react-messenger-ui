@@ -1,7 +1,7 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.11';
+const version = '0.0.12';
 const Text = 'TEXT';
 const Message = 'MESSAGE';
 const SenderAction = 'SENDERACTION';
@@ -29,7 +29,8 @@ const Adjustment = 'ADJUSTMENT';
 const Summary = 'SUMMARY';
 const ReceiptTemplate = 'RECEIPTTEMPLATE';
 const ReceiptElement = 'RECEIPTELEMENT';
-
+const OpenGraphTemplate = 'OPENGRAPHTEMPLATE';
+const OpenGraphElement = 'OPENGRAPHELEMENT';
 
 export {
   render,
@@ -60,6 +61,8 @@ export {
   ReceiptElement,
   ReceiptTemplate,
   Summary,
+  OpenGraphTemplate,
+  OpenGraphElement,
   CONSTANTS,
   version
 };
