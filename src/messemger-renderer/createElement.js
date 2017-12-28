@@ -3,7 +3,7 @@ import * as components from '../components/Messaging';
 const { Response, CONSTANTS, ...others } = components;
 
 function createElement(type, props, root) {
-  console.log('creating element', type, props, root, others);
+  // console.log('creating element', type, props, root, others);
   const COMPONENTS = {
     RESPONSE: () => new Response(),
     default: undefined

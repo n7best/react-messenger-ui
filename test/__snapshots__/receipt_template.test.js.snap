@@ -9,6 +9,7 @@ Object {
           "city": "Menlo Park",
           "country": "USA",
           "postal_code": "94025",
+          "state": "CA",
           "street_1": "1 Hacker Way",
         },
         "adjustments": Array [
