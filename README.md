@@ -7,6 +7,6 @@
 
 Build Bot using JavaScript and React
 
-**Visit [https://react-messenger-ui.herokuapp.com/](https://https://react-messenger-ui.herokuapp.com/) to get started.**
+**Visit [https://react-messenger-ui.herokuapp.com/](https://react-messenger-ui.herokuapp.com/) to get started.**
 
 This project was mean to implement Meseenger Platform API as custom renderer using React 16 Render API. Trying to implement it as I learn my way through how the [`react-reconciler`](https://github.com/facebook/react/tree/master/packages/react-reconciler) works. I chose messenger platform because even though the renderer renders API JSON but ultimately it renders Bot UI to the user.
