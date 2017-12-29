@@ -49,6 +49,7 @@ const siteConfig = {
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/n7best/react-messenger-ui',
+  facebookAppId: '1887139748264265'
 };
 
 module.exports = siteConfig;

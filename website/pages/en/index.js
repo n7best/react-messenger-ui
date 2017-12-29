@@ -47,6 +47,13 @@ class HomeSplash extends React.Component {
               <div className="section promoSection">
                 <div className="promoRow">
                   <div className="pluginRowBlock">
+                    <div className="fb-send-to-messenger"
+                      messenger_app_id="1887139748264265"
+                      page_id="552483055096851"
+                      data-ref="fromdoc"
+                      color="blue"
+                      size="standard">
+                    </div>
                     <Button href="#try">Try It Out</Button>
                     <Button
                       href={
