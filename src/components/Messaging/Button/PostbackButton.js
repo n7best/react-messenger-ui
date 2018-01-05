@@ -6,7 +6,7 @@ class PostbackButton extends Button {
     super(BUTTON_TYPE.POSTBACK);
 
     if (typeof props.children === 'string') {
-      this.title = props.children;
+      this.title = props.children.trim();
     }
 
     this.payload = props.payload || false;

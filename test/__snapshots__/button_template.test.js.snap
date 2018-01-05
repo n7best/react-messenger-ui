@@ -34,3 +34,38 @@ Object {
   },
 }
 `;
+
+exports[`should render button tempalte response with trim 1`] = `
+Object {
+  "message": Object {
+    "attachment": Object {
+      "payload": Object {
+        "buttons": Array [
+          URLButton {
+            "title": "world",
+            "type": "web_url",
+            "url": "magic link",
+          },
+          PostbackButton {
+            "payload": "magic payload",
+            "title": "world",
+            "type": "postback",
+          },
+          CallButton {
+            "payload": "+1234567890",
+            "title": "call",
+            "type": "phone_number",
+          },
+        ],
+        "template_type": "button",
+        "text": "hello",
+      },
+      "type": "template",
+    },
+  },
+  "messaging_type": "RESPONSE",
+  "recipient": Recipient {
+    "id": "<PSID>",
+  },
+}
+`;

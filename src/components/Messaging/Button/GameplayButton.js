@@ -6,7 +6,7 @@ class GameplayButton extends Button {
     super(BUTTON_TYPE.GAME_PLAY);
 
     if (typeof props.children === 'string') {
-      this.title = props.children;
+      this.title = props.children.trim();
     }
 
     this.payload = props.payload || false;

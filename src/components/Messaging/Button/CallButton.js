@@ -6,7 +6,7 @@ class CallButton extends Button {
     super(BUTTON_TYPE.CALL);
 
     if (typeof props.children === 'string') {
-      this.title = props.children;
+      this.title = props.children.trim();
     }
 
     this.payload = props.payload || false;

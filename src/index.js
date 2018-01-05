@@ -1,41 +1,45 @@
 import { render } from './messemger-renderer/render';
 import CONSTANTS from './components/Messaging/constants';
 
-const version = '0.0.14';
-const Text = 'TEXT';
-const Message = 'MESSAGE';
-const SenderAction = 'SENDERACTION';
-const Attachment = 'ATTACHMENT';
-const QuickReply = 'QUICKREPLY';
-const Button = 'BUTTON';
-const URLButton = 'URLBUTTON';
-const PostbackButton = 'POSTBACKBUTTON';
-const ShareButton = 'SHAREBUTTON';
-const CallButton = 'CALLBUTTON';
-const LoginButton = 'LOGINBUTTON';
-const LogoutButton = 'LOGOUTBUTTON';
-const GameplayButton = 'GAMEPLAYBUTTON';
-const Template = 'TEMPLATE';
-const Element = 'ELEMENT';
-const GenericElement = 'GENERICELEMENT';
-const ButtonTemplate = 'BUTTONTEMPLATE';
-const GenericTemplate = 'GENERICTEMPLATE';
-const ListTemplate = 'LISTTEMPLATE';
-const ListElement = 'LISTELEMENT';
-const MediaTemplate = 'MEDIATEMPLATE';
-const MediaElement = 'MEDIAELEMENT';
-const Address = 'ADDRESS';
-const Adjustment = 'ADJUSTMENT';
-const Summary = 'SUMMARY';
-const ReceiptTemplate = 'RECEIPTTEMPLATE';
-const ReceiptElement = 'RECEIPTELEMENT';
-const OpenGraphTemplate = 'OPENGRAPHTEMPLATE';
-const OpenGraphElement = 'OPENGRAPHELEMENT';
-const PersistentMenu = 'PERSISTENTMENU';
-const Menu = 'MENU';
-const NestedMenu = 'NESTEDMENU';
-
+export const version = '0.0.15';
+export const Text = 'TEXT';
+export const Message = 'MESSAGE';
+export const SenderAction = 'SENDERACTION';
+export const Attachment = 'ATTACHMENT';
+export const QuickReply = 'QUICKREPLY';
+export const Button = 'BUTTON';
+export const URLButton = 'URLBUTTON';
+export const PostbackButton = 'POSTBACKBUTTON';
+export const ShareButton = 'SHAREBUTTON';
+export const CallButton = 'CALLBUTTON';
+export const LoginButton = 'LOGINBUTTON';
+export const LogoutButton = 'LOGOUTBUTTON';
+export const GameplayButton = 'GAMEPLAYBUTTON';
+export const Template = 'TEMPLATE';
+export const Element = 'ELEMENT';
+export const GenericElement = 'GENERICELEMENT';
+export const ButtonTemplate = 'BUTTONTEMPLATE';
+export const GenericTemplate = 'GENERICTEMPLATE';
+export const ListTemplate = 'LISTTEMPLATE';
+export const ListElement = 'LISTELEMENT';
+export const MediaTemplate = 'MEDIATEMPLATE';
+export const MediaElement = 'MEDIAELEMENT';
+export const Address = 'ADDRESS';
+export const Adjustment = 'ADJUSTMENT';
+export const Summary = 'SUMMARY';
+export const ReceiptTemplate = 'RECEIPTTEMPLATE';
+export const ReceiptElement = 'RECEIPTELEMENT';
+export const OpenGraphTemplate = 'OPENGRAPHTEMPLATE';
+export const OpenGraphElement = 'OPENGRAPHELEMENT';
+export const PersistentMenu = 'PERSISTENTMENU';
+export const Menu = 'MENU';
+export const NestedMenu = 'NESTEDMENU';
 export {
+  render,
+  CONSTANTS
+};
+
+const MessengerUI = {
   render,
   Text,
   Message,
@@ -72,3 +76,5 @@ export {
   CONSTANTS,
   version
 };
+
+export default MessengerUI;
