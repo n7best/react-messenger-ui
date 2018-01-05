@@ -6,7 +6,7 @@ class URLButton extends Button {
     super(BUTTON_TYPE.URL);
 
     if (typeof props.children === 'string') {
-      this.title = props.children;
+      this.title = props.children.trim();
     }
 
     this.url = props.url || false;

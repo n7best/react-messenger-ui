@@ -18,7 +18,7 @@ class ButtonTemplate extends Template {
     if (props.children) {
       props.children.forEach((child) => {
         if (typeof child === 'string') {
-          this.template.text = child;
+          this.template.text = child.trim();
         }
       });
     }
